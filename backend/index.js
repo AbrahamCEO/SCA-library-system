@@ -2,10 +2,22 @@ import express, { response } from "express";
 import { PORT, mongoDBURL } from "./config.js";
 import mongoose from "mongoose";
 import { Book } from './models/bookModel.js';
+import booksRoute from './routes/booksRoute.js';
+import cors from 'cors';
 
 const app = express();
 
 // Middleware for parsing request body
+// Option 1: All All Origins with Default of cors(*)
+// app.use(cors());
+//Option 2: Allo custom origins
+app.use(
+    cors({
+        origin: 'http://localhost:3000',
+        methods: ['GET', 'POST', 'PUT', 'DELETE'],
+        allowedHeaders: ['Content-Type'],
+    })
+)
 app.use(express.json());
 
 app.get('/', (request, response) => {
@@ -13,50 +25,7 @@ app.get('/', (request, response) => {
     return response.status(234).send('Welcome To MERN Stack Tutorial')
 });
 
-// Route for Save a new book
-app.post('/books', async (request, response) => {
-    try {
-        if (
-            !request.body.title ||
-            !request.body.author ||
-            !request.body.publishYear
-        ) {
-            return response.status(400).send({
-                message: 'Send all required fields: title, author, publishYear',
-            });
-        }
-        const newBook = {
-            title: request.body.title,
-            author: request.body.author,
-            publishYear: request.body.publishYear,
-        };
-
-        const book = await Book.create(newBook);
-
-        return response.status(201).send(book);
-    } catch (error) {
-        console.log(error.message);
-        response.status(500).send({ message: error.message });
-    }
-});
-
-// Route to Get all books from db
-
-app.get('/books', async (request, response) => {
-    try {
-        const books = await Book.find({});
-
-        return response.status(200).json({
-            count: books.length,
-            data: books
-        })
-    } catch (error) {
-        console.log(error.message);
-        response.status(500).send({ message: error.message });
-    }
-});
-
-//continue
+app.use('/books', booksRoute);
 
 mongoose
     .connect(mongoDBURL)
