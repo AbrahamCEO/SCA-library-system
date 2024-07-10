@@ -9,15 +9,15 @@ const app = express();
 
 // Middleware for parsing request body
 // Option 1: All All Origins with Default of cors(*)
-// app.use(cors());
+app.use(cors());
 //Option 2: Allo custom origins
-app.use(
-    cors({
-        origin: 'http://localhost:3000',
-        methods: ['GET', 'POST', 'PUT', 'DELETE'],
-        allowedHeaders: ['Content-Type'],
-    })
-)
+// app.use(
+//     cors({
+//         origin: 'http://localhost:3000',
+//         methods: ['GET', 'POST', 'PUT', 'DELETE'],
+//         allowedHeaders: ['Content-Type'],
+//     })
+// )
 app.use(express.json());
 
 app.get('/', (request, response) => {
