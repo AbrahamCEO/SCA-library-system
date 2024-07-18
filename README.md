@@ -62,14 +62,17 @@ This project is a simple Library Management System with user authentication. The
 ## Screenshots
 
 1. **Signup Page**
+   
    ![image](https://github.com/user-attachments/assets/f50bcb70-54c1-48d8-ada7-4a689501ee63)
 
 
-2. **Login Page**
+3. **Login Page**
+   
    ![image](https://github.com/user-attachments/assets/7d1fa0d9-9b60-493e-9e6e-48a2f91891c6)
 
 
-3. **Home Page**
+4. **Home Page**
+   
    ![image](https://github.com/user-attachments/assets/11dd9dcc-d042-4c9d-a8cd-705ab5deb96c)
 
 
