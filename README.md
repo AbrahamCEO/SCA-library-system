@@ -57,24 +57,25 @@ This project is a simple Library Management System with user authentication. The
 
 - **Signup Page:** Allows users to create a new account.
 - **Login Page:** Allows users to log in using their email and password.
-- **Home Page:** Displays a welcome message with the user's name and allows management of books. Users can view books in a table or card format, add new books, and log out.
+- **Home Page:** Displays a welcome message with the user's name and allows management of books. Users can:
+  - **View Books:** See books in a table or card format.
+  - **Add New Books:** Use the "Add Book" button to add new books to the library.
+  - **Filter Books:** Filter books based on their status (Available or Checked Out).
+  - **Logout:** Use the logout button to sign out of the application.
 
 ## Screenshots
 
 1. **Signup Page**
-   
-   ![image](https://github.com/user-attachments/assets/f50bcb70-54c1-48d8-ada7-4a689501ee63)
 
+   ![Signup Page](https://github.com/user-attachments/assets/f50bcb70-54c1-48d8-ada7-4a689501ee63)
 
-3. **Login Page**
-   
-   ![image](https://github.com/user-attachments/assets/7d1fa0d9-9b60-493e-9e6e-48a2f91891c6)
+2. **Login Page**
 
+   ![Login Page](https://github.com/user-attachments/assets/7d1fa0d9-9b60-493e-9e6e-48a2f91891c6)
 
-4. **Home Page**
-   
-   ![image](https://github.com/user-attachments/assets/11dd9dcc-d042-4c9d-a8cd-705ab5deb96c)
+3. **Home Page**
 
+   ![Home Page](https://github.com/user-attachments/assets/11dd9dcc-d042-4c9d-a8cd-705ab5deb96c)
 
 ## Technologies Used
 
@@ -86,4 +87,3 @@ This project is a simple Library Management System with user authentication. The
   - Node.js
   - Express
   - MongoDB (for database)
-
